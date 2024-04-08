@@ -1,0 +1,29 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+
+  @keyframes button-pulse {
+    0%, 100% {
+      transform: scale(0.98); /* Normal size */
+    }
+    50% {
+      transform: scale(1); /* Double the size */
+    }
+  }
+  
+
+  .button-pulse {
+    animation: button-pulse 1s ease-in-out infinite;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  
+  input[type=number] {
+      -moz-appearance:textfield; /* Firefox */
+  }
